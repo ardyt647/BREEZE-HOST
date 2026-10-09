@@ -5,6 +5,8 @@ paid plans. Built with **Next.js 14 (App Router)**, **React 18**, **TypeScript**
 
 > **Your Project. Our Power.**
 
+🔗 **Live demo:** https://ardyt647.github.io/BREEZE-HOST/
+
 ---
 
 ## ✨ Design
@@ -43,6 +45,11 @@ Production build:
 npm run build
 npm start
 ```
+
+## 🌐 Deploy
+
+Pushing to `main` triggers `.github/workflows/deploy-pages.yml`, which builds a static export and
+publishes it to **GitHub Pages** at https://ardyt647.github.io/BREEZE-HOST/.
 
 ## ✏️ Make it yours
 
