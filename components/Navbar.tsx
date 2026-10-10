@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { asset } from "@/lib/asset";
 
 const LINKS = [
   { label: "Features", href: "#features" },
@@ -30,7 +31,13 @@ export default function Navbar() {
         >
           <a href="#top" className="flex items-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Breeze Host" className="h-11 w-auto" />
+            <img
+              src={asset("/logo.png")}
+              alt="Breeze Host"
+              width={386}
+              height={220}
+              className="h-11 w-auto"
+            />
           </a>
 
           <div className="hidden items-center gap-1 md:flex">

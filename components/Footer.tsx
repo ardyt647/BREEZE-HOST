@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { asset } from "@/lib/asset";
 
 export default function Footer() {
   return (
@@ -7,7 +8,13 @@ export default function Footer() {
         <div className="glass-card flex flex-col items-center gap-8 px-8 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
           <div className="flex flex-col items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Breeze Host" className="h-14 w-auto" />
+            <img
+              src={asset("/logo.png")}
+              alt="Breeze Host"
+              width={386}
+              height={220}
+              className="h-14 w-auto"
+            />
             <p className="text-sm font-semibold text-teal-dark">Your Project. Our Power.</p>
           </div>
 

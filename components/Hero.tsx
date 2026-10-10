@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 /** Static decorative wind lines that echo the "breeze" strokes in the logo. */
 function WindBackdrop() {
   return (
@@ -43,9 +45,9 @@ export default function Hero() {
           </h1>
 
           <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-deep/75">
-            Breeze Host is a hosting service that runs on Discord. We host bots, websites and game
-            servers on plans that start free, with paid tiers when your project needs more room.
-            Support is answered by our team in the same server you join.
+            Breeze Host is a hosting service that runs on Discord. We provide VPS plans on Debian and
+            Ubuntu with full root access, starting free and moving to paid tiers when your project
+            needs more room. Support is answered by our team in the same server you join.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -62,9 +64,15 @@ export default function Hero() {
         <div className="mx-auto mt-16 flex max-w-3xl justify-center">
           <div className="glass-card flex flex-col items-center gap-4 px-10 py-8">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Breeze Host" className="h-28 w-auto" />
+            <img
+              src={asset("/logo.png")}
+              alt="Breeze Host"
+              width={386}
+              height={220}
+              className="h-28 w-auto"
+            />
             <p className="text-sm font-semibold text-teal-dark">
-              Hosting for bots, websites and game servers
+              VPS hosting with full root access
             </p>
           </div>
         </div>

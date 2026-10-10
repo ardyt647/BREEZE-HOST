@@ -88,6 +88,8 @@ components/
   Community.tsx
   Footer.tsx
   LegalLayout.tsx   shared shell for the legal pages
+lib/
+  asset.ts          prefixes the Pages base path for asset URLs
 public/
   logo.png          the logo artwork
 .github/workflows/

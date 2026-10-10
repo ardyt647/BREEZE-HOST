@@ -5,6 +5,10 @@ const basePath = process.env.PAGES_BASE_PATH || "";
 
 const nextConfig = {
   reactStrictMode: true,
+  // Exposed to the client so asset paths written in markup include the base path.
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
   // Set EXPORT=1 to emit a fully static site into ./out (used for Pages + the preview file).
   ...(isExport ? { output: "export", images: { unoptimized: true } } : {}),
   ...(basePath ? { basePath, assetPrefix: basePath } : {}),
