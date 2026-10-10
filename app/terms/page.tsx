@@ -1,15 +1,42 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/structuredData";
+import { SITE_NAME, OG_IMAGE } from "@/lib/seo";
+
+const DESCRIPTION =
+  "The terms that apply when you use the hosting services Breeze Host provides through our Discord server.";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions | Breeze Host",
-  description:
-    "The terms that apply when you use the hosting services Breeze Host provides through our Discord server.",
+  title: "Terms and Conditions",
+  description: DESCRIPTION,
+  alternates: { canonical: "/terms" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    url: "/terms",
+    title: `Terms and Conditions | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Terms and Conditions | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
 };
 
 export default function TermsPage() {
   return (
     <LegalLayout title="Terms and Conditions" updated="10 October 2026">
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Terms and Conditions", path: "/terms" },
+        ])}
+      />
       <p>
         These terms apply when you use the hosting services provided by Breeze Host through our
         Discord server. By using the service, you agree to them.

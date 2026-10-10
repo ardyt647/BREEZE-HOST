@@ -1,18 +1,5 @@
-/**
- * VPS plans for Breeze Host. Specs and prices are taken from the plan sheet.
- * Update the PLANS array if the plans change.
- */
+import { PLANS } from "@/lib/plans";
 import { DISCORD_INVITE } from "@/lib/site";
-
-type Spec = { label: string; value: string; icon: React.ReactNode };
-type Plan = {
-  tier: string;
-  name: string;
-  price: string;
-  priceNote: string;
-  featured?: boolean;
-  specs: Spec[];
-};
 
 const Icon = ({ children }: { children: React.ReactNode }) => (
   <svg
@@ -28,84 +15,35 @@ const Icon = ({ children }: { children: React.ReactNode }) => (
   </svg>
 );
 
-const RAM = (
-  <Icon>
-    <rect x="3" y="7" width="18" height="9" rx="2" />
-    <path d="M6 16v3M10 16v3M14 16v3M18 16v3" />
-  </Icon>
-);
-const CPU = (
-  <Icon>
-    <rect x="6" y="6" width="12" height="12" rx="2" />
-    <rect x="10" y="10" width="4" height="4" />
-    <path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" />
-  </Icon>
-);
-const DISK = (
-  <Icon>
-    <ellipse cx="12" cy="6" rx="7" ry="3" />
-    <path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6" />
-    <path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" />
-  </Icon>
-);
-const CLOCK = (
-  <Icon>
-    <circle cx="12" cy="12" r="9" />
-    <path d="M12 7.5V12l3 2" />
-  </Icon>
-);
-
-const PLANS: Plan[] = [
-  {
-    tier: "Tier 1",
-    name: "Starter",
-    price: "Free",
-    priceNote: "with 20 invites, or \u20B9499",
-    specs: [
-      { label: "RAM", value: "12 GB", icon: RAM },
-      { label: "CPU", value: "4 cores", icon: CPU },
-      { label: "Disk", value: "20 GB", icon: DISK },
-      { label: "Duration", value: "330 days", icon: CLOCK },
-    ],
-  },
-  {
-    tier: "Tier 2",
-    name: "Basic",
-    price: "\u20B92,999",
-    priceNote: "for the full term",
-    specs: [
-      { label: "RAM", value: "16 GB", icon: RAM },
-      { label: "CPU", value: "6 cores", icon: CPU },
-      { label: "Disk", value: "35 GB", icon: DISK },
-      { label: "Duration", value: "190 days", icon: CLOCK },
-    ],
-  },
-  {
-    tier: "Tier 3",
-    name: "Pro",
-    price: "\u20B93,999",
-    priceNote: "for the full term",
-    featured: true,
-    specs: [
-      { label: "RAM", value: "42 GB", icon: RAM },
-      { label: "CPU", value: "32 cores", icon: CPU },
-      { label: "Disk", value: "50 GB", icon: DISK },
-      { label: "Duration", value: "320 days", icon: CLOCK },
-    ],
-  },
-  {
-    tier: "Tier 4",
-    name: "Ultimate",
-    price: "\u20B94,999",
-    priceNote: "for the full term",
-    specs: [
-      { label: "RAM", value: "84 GB", icon: RAM },
-      { label: "CPU", value: "42 cores", icon: CPU },
-      { label: "Disk", value: "100 GB", icon: DISK },
-      { label: "Duration", value: "392 days", icon: CLOCK },
-    ],
-  },
-];
+/** One icon per spec label, so the data file stays free of markup. */
+const SPEC_ICONS: Record<string, React.ReactNode> = {
+  RAM: (
+    <Icon>
+      <rect x="3" y="7" width="18" height="9" rx="2" />
+      <path d="M6 16v3M10 16v3M14 16v3M18 16v3" />
+    </Icon>
+  ),
+  CPU: (
+    <Icon>
+      <rect x="6" y="6" width="12" height="12" rx="2" />
+      <rect x="10" y="10" width="4" height="4" />
+      <path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" />
+    </Icon>
+  ),
+  Disk: (
+    <Icon>
+      <ellipse cx="12" cy="6" rx="7" ry="3" />
+      <path d="M5 6v12c0 1.66 3.13 3 7 3s7-1.34 7-3V6" />
+      <path d="M5 12c0 1.66 3.13 3 7 3s7-1.34 7-3" />
+    </Icon>
+  ),
+  Duration: (
+    <Icon>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7.5V12l3 2" />
+    </Icon>
+  ),
+};
 
 const HIGHLIGHTS = [
   { label: "Fast", icon: <Icon><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" /></Icon> },
@@ -170,7 +108,7 @@ export default function Plans() {
                 {plan.specs.map((s) => (
                   <li key={s.label} className="flex items-center justify-between gap-3 text-sm">
                     <span className="flex items-center gap-2 text-deep/60">
-                      <span className="text-teal">{s.icon}</span>
+                      <span className="text-teal">{SPEC_ICONS[s.label]}</span>
                       {s.label}
                     </span>
                     <span className="font-semibold text-deep">{s.value}</span>

@@ -69,6 +69,7 @@ export default function Hero() {
               alt="Breeze Host"
               width={386}
               height={220}
+              fetchPriority="high"
               className="h-28 w-auto"
             />
             <p className="text-sm font-semibold text-teal-dark">

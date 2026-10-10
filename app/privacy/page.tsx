@@ -1,15 +1,42 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/structuredData";
+import { SITE_NAME, OG_IMAGE } from "@/lib/seo";
+
+const DESCRIPTION =
+  "How Breeze Host collects, uses and protects the information you share when you use our hosting service and Discord server.";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Breeze Host",
-  description:
-    "How Breeze Host collects, uses and protects the information you share when you use our hosting service and Discord server.",
+  title: "Privacy Policy",
+  description: DESCRIPTION,
+  alternates: { canonical: "/privacy" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "en_IN",
+    url: "/privacy",
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Privacy Policy | ${SITE_NAME}`,
+    description: DESCRIPTION,
+    images: [OG_IMAGE.url],
+  },
 };
 
 export default function PrivacyPage() {
   return (
     <LegalLayout title="Privacy Policy" updated="10 October 2026">
+      <JsonLd
+        data={breadcrumbLd([
+          { name: "Home", path: "/" },
+          { name: "Privacy Policy", path: "/privacy" },
+        ])}
+      />
       <p>
         This policy explains what information Breeze Host collects when you use our hosting service
         and our Discord server, why we collect it, and what we do with it.
