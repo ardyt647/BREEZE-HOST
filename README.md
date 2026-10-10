@@ -84,6 +84,7 @@ components/
   Hero.tsx
   Features.tsx
   Plans.tsx
+  GetStarted.tsx    the three step join flow
   Community.tsx
   Footer.tsx
   LegalLayout.tsx   shared shell for the legal pages

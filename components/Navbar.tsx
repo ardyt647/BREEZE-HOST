@@ -7,6 +7,7 @@ import { DISCORD_INVITE } from "@/lib/site";
 const LINKS = [
   { label: "Features", href: "#features" },
   { label: "Plans", href: "#plans" },
+  { label: "Get started", href: "#get-started" },
   { label: "Community", href: "#community" },
 ];
 

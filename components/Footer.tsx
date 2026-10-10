@@ -21,6 +21,7 @@ export default function Footer() {
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-deep/70">
             <a href="#features" className="transition-colors hover:text-teal-dark">Features</a>
             <a href="#plans" className="transition-colors hover:text-teal-dark">Plans</a>
+            <a href="#get-started" className="transition-colors hover:text-teal-dark">Get started</a>
             <a href="#community" className="transition-colors hover:text-teal-dark">Community</a>
             <Link href="/privacy" className="transition-colors hover:text-teal-dark">Privacy Policy</Link>
             <Link href="/terms" className="transition-colors hover:text-teal-dark">Terms and Conditions</Link>
