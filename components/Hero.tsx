@@ -1,5 +1,3 @@
-import { BreezeMark } from "./BreezeLogo";
-
 /** Static decorative wind lines that echo the "breeze" strokes in the logo. */
 function WindBackdrop() {
   return (
@@ -62,16 +60,12 @@ export default function Hero() {
         </div>
 
         <div className="mx-auto mt-16 flex max-w-3xl justify-center">
-          <div className="glass-card flex items-center gap-5 px-6 py-6 sm:gap-7 sm:px-10">
-            <BreezeMark className="h-16 w-16 shrink-0 sm:h-20 sm:w-20" />
-            <div className="text-left">
-              <p className="text-2xl font-extrabold leading-none tracking-tight text-deep sm:text-3xl">
-                Breeze Host
-              </p>
-              <p className="mt-1.5 text-sm font-semibold text-teal-dark">
-                Hosting for bots, websites and game servers
-              </p>
-            </div>
+          <div className="glass-card flex flex-col items-center gap-4 px-10 py-8">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Breeze Host" className="h-28 w-auto" />
+            <p className="text-sm font-semibold text-teal-dark">
+              Hosting for bots, websites and game servers
+            </p>
           </div>
         </div>
       </div>

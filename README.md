@@ -18,8 +18,8 @@ The palette is sampled straight from the logo, so the page stays on brand:
 | `aqua` | `#75BBBD` | the mid teal of the icon strokes |
 | `cyan.soft` / `cyan.mist` | `#BFEBEE` / `#D3EFF8` | the icon fill and the light background |
 
-The logo is rebuilt as a scalable SVG component (`components/BreezeLogo.tsx`). It is also used for
-the favicon, in both `app/icon.svg` and `app/favicon.ico`.
+The site uses the actual logo artwork, stored at `public/logo.png` (the trimmed lockup). The
+favicon and app icon are cropped from the same file: `app/favicon.ico` and `app/icon.png`.
 
 ## House style
 
@@ -76,8 +76,8 @@ app/
   layout.tsx        metadata and fonts
   page.tsx          assembles the landing page sections
   globals.css       theme, gradients, shared components
-  icon.svg          favicon (the Breeze mark)
-  favicon.ico       classic favicon
+  favicon.ico       favicon
+  icon.png          app icon
   privacy/page.tsx  privacy policy
   terms/page.tsx    terms and conditions
 components/
@@ -88,9 +88,8 @@ components/
   Community.tsx
   Footer.tsx
   LegalLayout.tsx   shared shell for the legal pages
-  BreezeLogo.tsx    the logo, rebuilt as SVG
 public/
-  logo.png          the original logo file
+  logo.png          the logo artwork
 .github/workflows/
   deploy-pages.yml  build and deploy to GitHub Pages
 ```

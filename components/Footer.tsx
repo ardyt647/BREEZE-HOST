@@ -1,21 +1,14 @@
 import Link from "next/link";
-import { BreezeMark } from "./BreezeLogo";
 
 export default function Footer() {
   return (
     <footer className="relative pb-12 pt-6">
       <div className="section-shell">
         <div className="glass-card flex flex-col items-center gap-8 px-8 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
-          <div className="flex items-center gap-4">
-            <BreezeMark className="h-12 w-12" />
-            <div>
-              <p className="text-lg font-extrabold leading-none tracking-tight text-deep">
-                Breeze Host
-              </p>
-              <p className="mt-1 text-sm font-semibold text-teal-dark">
-                Your Project. Our Power.
-              </p>
-            </div>
+          <div className="flex flex-col items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Breeze Host" className="h-14 w-auto" />
+            <p className="text-sm font-semibold text-teal-dark">Your Project. Our Power.</p>
           </div>
 
           <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm font-semibold text-deep/70">

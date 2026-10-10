@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BreezeMark } from "./BreezeLogo";
 
 const LINKS = [
   { label: "Features", href: "#features" },
@@ -29,14 +28,9 @@ export default function Navbar() {
               : "border-transparent bg-white/30 backdrop-blur-sm"
           }`}
         >
-          <a href="#top" className="flex items-center gap-2.5">
-            <BreezeMark className="h-9 w-9" />
-            <span className="leading-none">
-              <span className="block text-base font-extrabold tracking-tight text-deep">Breeze</span>
-              <span className="block text-[0.7rem] font-semibold tracking-[0.22em] text-teal-dark">
-                HOST
-              </span>
-            </span>
+          <a href="#top" className="flex items-center">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Breeze Host" className="h-11 w-auto" />
           </a>
 
           <div className="hidden items-center gap-1 md:flex">
