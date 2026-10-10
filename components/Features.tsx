@@ -20,13 +20,13 @@ const I = (d: React.ReactNode) => (
 
 const FEATURES: Feature[] = [
   {
-    title: "Powerful & Reliable Hosting",
-    body: "Fast, well-specced hardware that keeps your bots, sites and game servers online — so your project never has to wait on us.",
+    title: "Powerful and Reliable Hosting",
+    body: "Fast hardware that keeps your bots, websites and game servers online. Your project stays up, and you are not left waiting on us.",
     icon: I(<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" />),
   },
   {
     title: "Affordable Plans",
-    body: "Start free and scale up only when you need to. Paid tiers stay honest and budget-friendly, with no nasty surprises.",
+    body: "Start on the free plan and move to a paid tier only when you need more. No hidden fees and no surprise charges.",
     icon: I(
       <>
         <path d="M12 3v18" />
@@ -36,12 +36,12 @@ const FEATURES: Feature[] = [
   },
   {
     title: "Stable Performance",
-    body: "Monitored around the clock for smooth, consistent uptime. When something wobbles, we notice before you do.",
+    body: "Our servers are monitored around the clock. When something goes wrong, we fix it before it reaches you.",
     icon: I(<path d="M12 2.5 20 6v6c0 5-3.4 8.3-8 9.5-4.6-1.2-8-4.5-8-9.5V6l8-3.5Z" />),
   },
   {
     title: "Friendly Support",
-    body: "A real, welcoming team on Discord. Ask a question, get help fast — and enjoy the conversation while you're at it.",
+    body: "Open a ticket or ask in the Discord server. A member of our team replies, not an automated bot.",
     icon: I(
       <>
         <path d="M4 13a8 8 0 0 1 16 0" />
@@ -59,11 +59,10 @@ export default function Features() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Why Breeze Host</span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-deep sm:text-4xl">
-            Everything you need, in one calm breeze
+            What you get with Breeze Host
           </h2>
           <p className="mt-4 text-deep/70">
-            We keep the complicated parts quiet so you can focus on building. Here&apos;s what you get
-            the moment you join.
+            Breeze Host is built to stay out of your way. Here is what every plan includes.
           </p>
         </div>
 
@@ -71,9 +70,9 @@ export default function Features() {
           {FEATURES.map((f) => (
             <article
               key={f.title}
-              className="glass-card group flex flex-col p-7 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-breeze"
+              className="glass-card flex flex-col p-7 transition-shadow duration-200 hover:shadow-breeze"
             >
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-dark to-aqua text-white shadow-breeze">
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-teal-dark to-aqua text-white shadow-breeze">
                 {f.icon}
               </span>
               <h3 className="mt-5 text-lg font-bold leading-snug text-deep">{f.title}</h3>

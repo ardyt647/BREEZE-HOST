@@ -23,9 +23,9 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="section-shell">
         <nav
-          className={`mt-4 flex items-center justify-between rounded-full border px-4 py-2.5 transition-all duration-300 sm:px-5 ${
+          className={`mt-4 flex items-center justify-between rounded-xl border px-4 py-2.5 transition-colors duration-200 sm:px-5 ${
             scrolled
-              ? "border-white/70 bg-white/75 shadow-glass backdrop-blur-xl"
+              ? "border-white/70 bg-white/80 shadow-glass backdrop-blur-xl"
               : "border-transparent bg-white/30 backdrop-blur-sm"
           }`}
         >
@@ -44,7 +44,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="rounded-full px-4 py-2 text-sm font-semibold text-deep/80 transition-colors hover:bg-white/70 hover:text-teal-dark"
+                className="rounded-md px-4 py-2 text-sm font-semibold text-deep/80 transition-colors hover:bg-white/70 hover:text-teal-dark"
               >
                 {l.label}
               </a>

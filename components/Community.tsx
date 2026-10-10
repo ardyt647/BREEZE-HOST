@@ -1,4 +1,5 @@
-const DISCORD_INVITE = "https://discord.gg/breeze-host"; // ← EDIT: your real invite link
+// EDIT ME: replace with your real Discord invite link before launch.
+const DISCORD_INVITE = "https://discord.gg/YOUR-INVITE-CODE";
 
 function ChatIcon() {
   return (
@@ -22,8 +23,7 @@ export default function Community() {
   return (
     <section id="community" className="relative py-20 sm:py-28">
       <div className="section-shell">
-        <div className="relative overflow-hidden rounded-4xl bg-gradient-to-br from-deep via-teal-dark to-teal px-7 py-14 shadow-breeze-lg sm:px-14 sm:py-16">
-          {/* soft breeze highlights */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-deep via-teal-dark to-teal px-7 py-14 shadow-breeze-lg sm:px-14 sm:py-16">
           <svg aria-hidden="true" viewBox="0 0 1200 500" className="pointer-events-none absolute inset-0 h-full w-full" preserveAspectRatio="xMidYMid slice">
             <g fill="none" stroke="#BFEBEE" strokeLinecap="round" opacity="0.28">
               <path d="M-40 120 C 260 70, 520 170, 820 100 S 1160 40, 1260 110" strokeWidth="3" />
@@ -32,53 +32,53 @@ export default function Community() {
           </svg>
 
           <div className="relative mx-auto max-w-2xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-soft">
+            <span className="inline-flex items-center gap-2 rounded-md border border-white/25 bg-white/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-cyan-soft">
               <span className="h-2 w-2 rounded-full bg-cyan-soft" />
               The Breeze Community
             </span>
             <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-              Come say hi 👋
+              Join the community
             </h2>
             <p className="mt-4 text-cyan-pale/90">
-              Everything at Breeze Host lives on Discord — plans, support and the people behind it.
-              Jump in, meet the community, and invite your friends to grow it with us. 🚀
+              Plans, support and the team all live in our Discord server. Come in, meet the other
+              members, and invite your friends if you find it useful.
             </p>
           </div>
 
           <div className="relative mx-auto mt-11 grid max-w-3xl gap-5 sm:grid-cols-2">
-            <div className="rounded-3xl border border-white/20 bg-white/10 p-7 backdrop-blur-md">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-cyan-soft">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-7 backdrop-blur-md">
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/15 text-cyan-soft">
                 <ChatIcon />
               </span>
-              <h3 className="mt-5 text-lg font-bold text-white">💬 Chat Here</h3>
+              <h3 className="mt-5 text-lg font-bold text-white">Chat with us</h3>
               <p className="mt-2 text-sm leading-relaxed text-cyan-pale/80">
-                Join the conversation, meet the community and enjoy your stay.
+                Join the conversation, meet other members and ask us anything about hosting.
               </p>
               <a
                 href={DISCORD_INVITE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-bold text-teal-dark transition-transform duration-300 hover:-translate-y-0.5"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-bold text-teal-dark transition-colors duration-200 hover:bg-cyan-pale"
               >
-                Open Discord <span aria-hidden="true">→</span>
+                Open Discord <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
 
-            <div className="rounded-3xl border border-white/20 bg-white/10 p-7 backdrop-blur-md">
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/15 text-cyan-soft">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-7 backdrop-blur-md">
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/15 text-cyan-soft">
                 <InviteIcon />
               </span>
-              <h3 className="mt-5 text-lg font-bold text-white">🔗 Invite Your Friends</h3>
+              <h3 className="mt-5 text-lg font-bold text-white">Invite your friends</h3>
               <p className="mt-2 text-sm leading-relaxed text-cyan-pale/80">
-                Help us grow the Breeze Host community — a quick invite goes a long way.
+                Help the community grow. A single invite goes a long way.
               </p>
               <a
                 href={DISCORD_INVITE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/40 px-6 py-3 text-sm font-bold text-white transition-colors duration-300 hover:bg-white/15"
+                className="mt-6 inline-flex items-center gap-2 rounded-lg border border-white/40 px-5 py-3 text-sm font-bold text-white transition-colors duration-200 hover:bg-white/15"
               >
-                Copy Invite Link
+                Copy invite link
               </a>
             </div>
           </div>

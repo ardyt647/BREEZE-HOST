@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Breeze Host — Your Project. Our Power.",
+  title: "Breeze Host | Your Project. Our Power.",
   description:
-    "Breeze Host is a Discord-based hosting service offering free and paid plans with powerful, reliable hosting, 24/7 friendly support, and stable performance.",
+    "Breeze Host is a Discord-based hosting service with free and paid plans for bots, websites and game servers. Hosting, support and the community all run through our Discord server.",
   keywords: [
     "Breeze Host",
     "hosting",
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     "bot hosting",
   ],
   openGraph: {
-    title: "Breeze Host — Your Project. Our Power.",
+    title: "Breeze Host | Your Project. Our Power.",
     description:
-      "Paid & free hosting services, available 24/7. Powerful, affordable, stable, and friendly.",
+      "Free and paid hosting plans for bots, websites and game servers, with support through our Discord server.",
     type: "website",
   },
 };

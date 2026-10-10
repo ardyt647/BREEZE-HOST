@@ -23,10 +23,9 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Soft, airy card surface used across the page */
 @layer components {
   .glass-card {
-    @apply rounded-4xl border border-white/70 bg-white/70 shadow-glass backdrop-blur-md;
+    @apply rounded-2xl border border-white/70 bg-white/70 shadow-glass backdrop-blur-md;
   }
 
   .section-shell {
@@ -34,16 +33,30 @@ body {
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-teal/20 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-teal-dark;
+    @apply inline-flex items-center gap-2 rounded-md border border-teal/20 bg-white/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-teal-dark;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-teal-dark to-teal px-7 py-3.5 text-sm font-bold text-white shadow-breeze transition-all duration-300 hover:-translate-y-0.5 hover:shadow-breeze-lg;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-teal-dark to-teal px-6 py-3 text-sm font-bold text-white shadow-breeze transition-colors duration-200 hover:from-teal hover:to-teal-light;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-teal/25 bg-white/60 px-7 py-3.5 text-sm font-bold text-deep backdrop-blur transition-all duration-300 hover:-translate-y-0.5 hover:border-teal/50 hover:bg-white;
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-teal/25 bg-white/60 px-6 py-3 text-sm font-bold text-deep transition-colors duration-200 hover:border-teal/50 hover:bg-white;
   }
+}
+
+/* Shared styling for the legal pages (privacy policy, terms). */
+.legal h2 {
+  @apply mt-8 text-lg font-bold text-deep;
+}
+.legal p {
+  @apply mt-3 text-sm leading-relaxed text-deep/80;
+}
+.legal ul {
+  @apply mt-3 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-deep/80;
+}
+.legal a {
+  @apply font-semibold text-teal-dark underline underline-offset-2;
 }
 
 ::selection {

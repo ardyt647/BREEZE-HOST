@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { BreezeMark } from "./BreezeLogo";
 
 export default function Footer() {
@@ -21,12 +22,14 @@ export default function Footer() {
             <a href="#features" className="transition-colors hover:text-teal-dark">Features</a>
             <a href="#plans" className="transition-colors hover:text-teal-dark">Plans</a>
             <a href="#community" className="transition-colors hover:text-teal-dark">Community</a>
+            <Link href="/privacy" className="transition-colors hover:text-teal-dark">Privacy Policy</Link>
+            <Link href="/terms" className="transition-colors hover:text-teal-dark">Terms and Conditions</Link>
           </nav>
         </div>
 
         <p className="mt-7 text-center text-xs text-deep/50">
-          © {new Date().getFullYear()} Breeze Host · Paid &amp; Free Services, 24/7. Operated through
-          our Discord community. 💜
+          &copy; {new Date().getFullYear()} Breeze Host. Hosting services run through our Discord
+          community.
         </p>
       </div>
     </footer>

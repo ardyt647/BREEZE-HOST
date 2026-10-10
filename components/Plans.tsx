@@ -1,14 +1,15 @@
 /**
- * ── EDIT ME ──────────────────────────────────────────────────────────────
- * These plans, prices and specs are sensible PLACEHOLDERS so the page looks
- * complete. Swap in your real Breeze Host plans before you go live.
- * ─────────────────────────────────────────────────────────────────────────
+ * EDIT ME
+ * These tiers describe the Breeze Host offering. No prices are invented here:
+ * the free plan is marked "Free" and paid plans are marked "Paid" with a note
+ * pointing to Discord. Replace the price and note values with your real
+ * figures once you have them.
  */
 type Plan = {
   name: string;
   tagline: string;
   price: string;
-  period: string;
+  note: string;
   cta: string;
   featured?: boolean;
   perks: string[];
@@ -17,45 +18,43 @@ type Plan = {
 const PLANS: Plan[] = [
   {
     name: "Breeze Starter",
-    tagline: "Perfect for trying things out",
+    tagline: "For your first project",
     price: "Free",
-    period: "forever",
-    cta: "Claim Free Plan",
+    note: "No card required",
+    cta: "Claim the free plan",
     perks: [
       "1 hosted project",
       "Community support",
       "Shared resources",
       "Basic uptime monitoring",
-      "Discord ticket support",
+      "Support through our Discord",
     ],
   },
   {
     name: "Breeze Pro",
-    tagline: "For growing projects & bots",
-    price: "₹99",
-    period: "/month",
-    cta: "Upgrade to Pro",
+    tagline: "For bots and sites that need more room",
+    price: "Paid",
+    note: "Current pricing is listed in our Discord",
+    cta: "Ask about Pro",
     featured: true,
     perks: [
       "Up to 5 hosted projects",
-      "Priority resources & RAM",
-      "99.9% uptime target",
-      "Faster deploy & restarts",
-      "Priority ticket support",
+      "More RAM and CPU",
+      "Faster restarts and deploys",
+      "Priority support",
     ],
   },
   {
     name: "Breeze Elite",
-    tagline: "For serious, always-on setups",
-    price: "₹249",
-    period: "/month",
-    cta: "Go Elite",
+    tagline: "For always-on setups",
+    price: "Paid",
+    note: "Current pricing is listed in our Discord",
+    cta: "Ask about Elite",
     perks: [
-      "Unlimited projects",
+      "More hosted projects",
       "Dedicated resources",
-      "Backups & custom domains",
-      "Advanced monitoring",
-      "Direct line to the team",
+      "Backups and custom domains",
+      "Direct contact with the team",
     ],
   },
 ];
@@ -75,11 +74,11 @@ export default function Plans() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="eyebrow">Our Plans</span>
           <h2 className="mt-5 text-3xl font-extrabold tracking-tight text-deep sm:text-4xl">
-            Find the perfect option for your project
+            Plans for every project
           </h2>
           <p className="mt-4 text-deep/70">
-            Whether you&apos;re spinning up your first bot or running something always-on, there&apos;s
-            a Breeze plan that fits — free to start, easy to grow.
+            Every plan is managed through our Discord server. Start free, then move up when your
+            project grows.
           </p>
         </div>
 
@@ -87,26 +86,26 @@ export default function Plans() {
           {PLANS.map((plan) => (
             <article
               key={plan.name}
-              className={`relative flex flex-col rounded-4xl border p-8 transition-all duration-300 hover:-translate-y-1.5 ${
+              className={`relative flex flex-col rounded-2xl border p-8 transition-shadow duration-200 ${
                 plan.featured
-                  ? "border-teal/30 bg-gradient-to-b from-white to-cyan-pale shadow-breeze-lg lg:-mt-4 lg:mb-4"
+                  ? "border-teal/30 bg-gradient-to-b from-white to-cyan-pale shadow-breeze-lg"
                   : "border-white/70 bg-white/70 shadow-glass backdrop-blur-md hover:shadow-breeze"
               }`}
             >
               {plan.featured && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-teal-dark to-teal px-4 py-1 text-[0.7rem] font-bold uppercase tracking-[0.14em] text-white shadow-breeze">
-                  Most Popular
+                <span className="absolute -top-3 left-8 rounded-md bg-gradient-to-r from-teal-dark to-teal px-3 py-1 text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white">
+                  Recommended
                 </span>
               )}
 
               <h3 className="text-xl font-extrabold text-deep">{plan.name}</h3>
               <p className="mt-1 text-sm text-deep/60">{plan.tagline}</p>
 
-              <div className="mt-6 flex items-end gap-1.5">
+              <div className="mt-6">
                 <span className="text-4xl font-extrabold tracking-tight text-teal-dark">
                   {plan.price}
                 </span>
-                <span className="pb-1.5 text-sm font-semibold text-deep/50">{plan.period}</span>
+                <p className="mt-2 text-sm text-deep/55">{plan.note}</p>
               </div>
 
               <a
@@ -131,7 +130,7 @@ export default function Plans() {
         </div>
 
         <p className="mt-8 text-center text-sm text-deep/55">
-          Not sure which plan? Hop into our Discord and we&apos;ll help you pick.
+          Not sure which plan fits? Ask us in our Discord server and we will help you choose.
         </p>
       </div>
     </section>

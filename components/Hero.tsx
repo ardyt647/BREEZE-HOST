@@ -1,6 +1,6 @@
 import { BreezeMark } from "./BreezeLogo";
 
-/** Decorative drifting wind swooshes that echo the logo's "breeze" lines. */
+/** Static decorative wind lines that echo the "breeze" strokes in the logo. */
 function WindBackdrop() {
   return (
     <svg
@@ -24,12 +24,6 @@ function WindBackdrop() {
   );
 }
 
-const STATS = [
-  { value: "24/7", label: "Uptime & support" },
-  { value: "Free", label: "Plans to start" },
-  { value: "100%", label: "Discord managed" },
-];
-
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden pt-36 pb-20 sm:pt-40 sm:pb-28">
@@ -37,12 +31,12 @@ export default function Hero() {
 
       <div className="section-shell relative">
         <div className="mx-auto max-w-3xl text-center">
-          <span className="eyebrow animate-fade-up">
+          <span className="eyebrow">
             <span className="h-2 w-2 rounded-full bg-teal" />
-            Paid &amp; Free Services · Online 24/7
+            Free and paid plans, online 24/7
           </span>
 
-          <h1 className="animate-fade-up mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-deep sm:text-6xl md:text-7xl">
+          <h1 className="mt-6 text-5xl font-extrabold leading-[1.05] tracking-tight text-deep sm:text-6xl md:text-7xl">
             Your Project.
             <br />
             <span className="bg-gradient-to-r from-teal-dark via-teal to-aqua bg-clip-text text-transparent">
@@ -50,48 +44,36 @@ export default function Hero() {
             </span>
           </h1>
 
-          <p className="animate-fade-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-deep/75">
-            Breeze Host is a Discord-run hosting service built for creators, gamers and developers.
-            Powerful, affordable and stable — with free plans to start and friendly humans on the
-            other end, around the clock.
+          <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-deep/75">
+            Breeze Host is a hosting service that runs on Discord. We host bots, websites and game
+            servers on plans that start free, with paid tiers when your project needs more room.
+            Support is answered by our team in the same server you join.
           </p>
 
-          <div className="animate-fade-up mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a href="#plans" className="btn-primary w-full sm:w-auto">
-              Explore Our Plans
-              <span aria-hidden="true">→</span>
+              See our plans
+              <span aria-hidden="true">&rarr;</span>
             </a>
             <a href="#community" className="btn-ghost w-full sm:w-auto">
-              Join the Community
+              Join the community
             </a>
           </div>
         </div>
 
-        {/* Floating logo mark — the visual anchor of the page */}
-        <div className="relative mx-auto mt-16 flex max-w-3xl justify-center">
-          <div className="animate-float-slow glass-card flex items-center gap-5 px-7 py-5 sm:gap-7 sm:px-10">
+        <div className="mx-auto mt-16 flex max-w-3xl justify-center">
+          <div className="glass-card flex items-center gap-5 px-6 py-6 sm:gap-7 sm:px-10">
             <BreezeMark className="h-16 w-16 shrink-0 sm:h-20 sm:w-20" />
             <div className="text-left">
               <p className="text-2xl font-extrabold leading-none tracking-tight text-deep sm:text-3xl">
                 Breeze Host
               </p>
               <p className="mt-1.5 text-sm font-semibold text-teal-dark">
-                ⚡ Powerful &amp; Reliable Hosting
+                Hosting for bots, websites and game servers
               </p>
             </div>
           </div>
         </div>
-
-        <dl className="mx-auto mt-14 grid max-w-2xl grid-cols-3 gap-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="glass-card px-4 py-5 text-center">
-              <dt className="text-2xl font-extrabold text-teal-dark sm:text-3xl">{s.value}</dt>
-              <dd className="mt-1 text-xs font-semibold uppercase tracking-wide text-deep/60">
-                {s.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

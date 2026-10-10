@@ -1,7 +1,7 @@
 import type { SVGProps } from "react";
 
 /**
- * BreezeMark — the circular "breeze + cloud" icon from the Breeze Host logo,
+ * BreezeMark: the circular "breeze and cloud" icon from the Breeze Host logo,
  * rebuilt as a clean, scalable SVG using the sampled palette.
  */
 export function BreezeMark({ className = "h-10 w-10", ...props }: SVGProps<SVGSVGElement> & { className?: string }) {
@@ -35,7 +35,7 @@ export function BreezeMark({ className = "h-10 w-10", ...props }: SVGProps<SVGSV
 }
 
 /**
- * BreezeLogo — the full lockup: mark above the two-line wordmark,
+ * BreezeLogo: the full lockup. The mark sits above the two-line wordmark,
  * matching the stacked, centre-aligned layout of the original.
  */
 export function BreezeLogo({ className = "" }: { className?: string }) {

@@ -1,38 +1,45 @@
-# 🌪️ Breeze Host — Landing Page
+# Breeze Host landing page
 
-A modern, airy landing page for **Breeze Host**, a Discord-run hosting service offering free and
-paid plans. Built with **Next.js 14 (App Router)**, **React 18**, **TypeScript** and **Tailwind CSS**.
+A landing page for **Breeze Host**, a Discord-run hosting service offering free and paid plans.
+Built with **Next.js 14 (App Router)**, **React 18**, **TypeScript** and **Tailwind CSS**.
 
-> **Your Project. Our Power.**
+> Your Project. Our Power.
 
-🔗 **Live demo:** https://ardyt647.github.io/BREEZE-HOST/
+Live site: https://ardyt647.github.io/BREEZE-HOST/
 
----
+## Design
 
-## ✨ Design
-
-The whole palette is sampled straight from your logo, so the page stays on-brand:
+The palette is sampled straight from the logo, so the page stays on brand:
 
 | Token | Hex | Where it comes from |
 | --- | --- | --- |
-| `ink` / `deep` | `#1E343A` / `#274248` | the dark teal-slate wordmark & outlines |
+| `ink` / `deep` | `#1E343A` / `#274248` | the dark teal-slate wordmark and outlines |
 | `teal` | `#2F7E84` | primary accent |
-| `aqua` | `#75BBBD` | the icon's mid-teal strokes |
-| `cyan.soft` / `cyan.mist` | `#BFEBEE` / `#D3EFF8` | the icon fill & light background |
+| `aqua` | `#75BBBD` | the mid teal of the icon strokes |
+| `cyan.soft` / `cyan.mist` | `#BFEBEE` / `#D3EFF8` | the icon fill and the light background |
 
-The logo itself is rebuilt as a scalable **SVG component** (`components/BreezeLogo.tsx`) and also
-serves as the favicon (`app/icon.svg`). Soft "breeze" swooshes, glassy cards and gentle float
-animations keep the calm, airy feel of the original mark.
+The logo is rebuilt as a scalable SVG component (`components/BreezeLogo.tsx`). It is also used for
+the favicon, in both `app/icon.svg` and `app/favicon.ico`.
 
-## 🧩 Sections
+## House style
 
-- **Hero** — headline *Your Project. Our Power.*, tagline, dual CTAs and a floating logo card
-- **Features** — Powerful & Reliable Hosting · Affordable Plans · Stable Performance · Friendly Support
-- **Plans** — Free starter, Pro and Elite tiers (placeholder — see below)
-- **Community** — *Chat Here* and *Invite Your Friends* calls to action
-- **Footer** — brand lockup and tagline
+These rules apply to every page. Please keep them when editing:
 
-## 🚀 Getting started
+- No purple gradients. The palette is teal, aqua and cyan only.
+- No pill-shaped buttons. Buttons and badges use small corner radii (`rounded-lg`, `rounded-md`).
+- No fake reviews, fake metrics, fake counters or invented prices.
+- No vague hero copy. Say what the service actually does.
+- No emoji used as icons. Icons are inline SVG.
+- No em dashes in copy.
+- No scroll animations, floating elements, or cursor effects.
+
+## Pages
+
+- `/` landing page (hero, features, plans, community, footer)
+- `/privacy` privacy policy
+- `/terms` terms and conditions
+
+## Getting started
 
 ```bash
 npm install
@@ -46,27 +53,33 @@ npm run build
 npm start
 ```
 
-## 🌐 Deploy
+## Deploy
 
 Pushing to `main` triggers `.github/workflows/deploy-pages.yml`, which builds a static export and
-publishes it to **GitHub Pages** at https://ardyt647.github.io/BREEZE-HOST/.
+publishes it to GitHub Pages at https://ardyt647.github.io/BREEZE-HOST/.
 
-## ✏️ Make it yours
+## Before you launch
 
-Two things are **placeholders** you should update before going live:
+Two values are placeholders and should be replaced:
 
-1. **Plans & pricing** — edit the `PLANS` array at the top of `components/Plans.tsx`.
-2. **Discord invite link** — edit `DISCORD_INVITE` at the top of `components/Community.tsx`
-   (currently `https://discord.gg/breeze-host`).
+1. Discord invite link: edit `DISCORD_INVITE` at the top of `components/Community.tsx`.
+2. Plan pricing: the plans in `components/Plans.tsx` show "Free" and "Paid" instead of invented
+   prices. Add your real figures there.
 
-## 📁 Structure
+The privacy policy and terms are a reasonable starting point but should be reviewed by a qualified
+professional before launch.
+
+## Structure
 
 ```
 app/
-  layout.tsx        # metadata + fonts
-  page.tsx          # assembles the sections
-  globals.css       # theme, gradients, shared components
-  icon.svg          # favicon (the Breeze mark)
+  layout.tsx        metadata and fonts
+  page.tsx          assembles the landing page sections
+  globals.css       theme, gradients, shared components
+  icon.svg          favicon (the Breeze mark)
+  favicon.ico       classic favicon
+  privacy/page.tsx  privacy policy
+  terms/page.tsx    terms and conditions
 components/
   Navbar.tsx
   Hero.tsx
@@ -74,7 +87,10 @@ components/
   Plans.tsx
   Community.tsx
   Footer.tsx
-  BreezeLogo.tsx    # the logo, rebuilt as SVG
+  LegalLayout.tsx   shared shell for the legal pages
+  BreezeLogo.tsx    the logo, rebuilt as SVG
 public/
-  logo.png          # your original logo file
+  logo.png          the original logo file
+.github/workflows/
+  deploy-pages.yml  build and deploy to GitHub Pages
 ```
