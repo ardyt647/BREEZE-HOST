@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { asset } from "@/lib/asset";
+import { DISCORD_INVITE } from "@/lib/site";
 
 const LINKS = [
   { label: "Features", href: "#features" },
@@ -24,9 +25,7 @@ export default function Navbar() {
       <div className="section-shell">
         <nav
           className={`mt-4 flex items-center justify-between rounded-xl border px-4 py-2.5 transition-colors duration-200 sm:px-5 ${
-            scrolled
-              ? "border-white/70 bg-white/80 shadow-glass backdrop-blur-xl"
-              : "border-transparent bg-white/30 backdrop-blur-sm"
+            scrolled ? "border-white/70 bg-white/90 shadow-glass" : "border-transparent bg-white/60"
           }`}
         >
           <a href="#top" className="flex items-center">
@@ -52,7 +51,12 @@ export default function Navbar() {
             ))}
           </div>
 
-          <a href="#community" className="btn-primary px-5 py-2.5 text-xs sm:text-sm">
+          <a
+            href={DISCORD_INVITE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary px-5 py-2.5 text-xs sm:text-sm"
+          >
             Join Discord
           </a>
         </nav>

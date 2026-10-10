@@ -60,11 +60,10 @@ publishes it to GitHub Pages at https://ardyt647.github.io/BREEZE-HOST/.
 
 ## Before you launch
 
-Two values are placeholders and should be replaced:
-
-1. Discord invite link: edit `DISCORD_INVITE` at the top of `components/Community.tsx`.
-2. Plan pricing: the plans in `components/Plans.tsx` show "Free" and "Paid" instead of invented
-   prices. Add your real figures there.
+- The Discord invite link lives in `lib/site.ts` (`DISCORD_INVITE`). Change it there and it updates
+  in the nav, the plan buttons and the community section.
+- The plans in `components/Plans.tsx` hold the current specs and prices. Update the `PLANS` array
+  when they change.
 
 The privacy policy and terms are a reasonable starting point but should be reviewed by a qualified
 professional before launch.
@@ -88,8 +87,10 @@ components/
   Community.tsx
   Footer.tsx
   LegalLayout.tsx   shared shell for the legal pages
+  CopyInviteButton.tsx  copies the invite link to the clipboard
 lib/
   asset.ts          prefixes the Pages base path for asset URLs
+  site.ts           shared values, including the Discord invite link
 public/
   logo.png          the logo artwork
 .github/workflows/

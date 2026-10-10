@@ -1,5 +1,5 @@
-// EDIT ME: replace with your real Discord invite link before launch.
-const DISCORD_INVITE = "https://discord.gg/YOUR-INVITE-CODE";
+import CopyInviteButton from "./CopyInviteButton";
+import { DISCORD_INVITE } from "@/lib/site";
 
 function ChatIcon() {
   return (
@@ -46,7 +46,7 @@ export default function Community() {
           </div>
 
           <div className="relative mx-auto mt-11 grid max-w-3xl gap-5 sm:grid-cols-2">
-            <div className="rounded-xl border border-white/20 bg-white/10 p-7 backdrop-blur-md">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-7">
               <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/15 text-cyan-soft">
                 <ChatIcon />
               </span>
@@ -64,7 +64,7 @@ export default function Community() {
               </a>
             </div>
 
-            <div className="rounded-xl border border-white/20 bg-white/10 p-7 backdrop-blur-md">
+            <div className="rounded-xl border border-white/20 bg-white/10 p-7">
               <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-white/15 text-cyan-soft">
                 <InviteIcon />
               </span>
@@ -72,14 +72,7 @@ export default function Community() {
               <p className="mt-2 text-sm leading-relaxed text-cyan-pale/80">
                 Help the community grow. A single invite goes a long way.
               </p>
-              <a
-                href={DISCORD_INVITE}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-lg border border-white/40 px-5 py-3 text-sm font-bold text-white transition-colors duration-200 hover:bg-white/15"
-              >
-                Copy invite link
-              </a>
+              <CopyInviteButton invite={DISCORD_INVITE} />
             </div>
           </div>
         </div>

@@ -2,6 +2,8 @@
  * VPS plans for Breeze Host. Specs and prices are taken from the plan sheet.
  * Update the PLANS array if the plans change.
  */
+import { DISCORD_INVITE } from "@/lib/site";
+
 type Spec = { label: string; value: string; icon: React.ReactNode };
 type Plan = {
   tier: string;
@@ -143,7 +145,7 @@ export default function Plans() {
               className={`relative flex flex-col rounded-2xl border p-7 transition-shadow duration-200 ${
                 plan.featured
                   ? "border-teal/30 bg-gradient-to-b from-white to-cyan-pale shadow-breeze-lg"
-                  : "border-white/70 bg-white/70 shadow-glass backdrop-blur-md hover:shadow-breeze"
+                  : "border-white/70 bg-white/85 shadow-glass hover:shadow-breeze"
               }`}
             >
               {plan.featured && (
@@ -177,7 +179,9 @@ export default function Plans() {
               </ul>
 
               <a
-                href="#community"
+                href={DISCORD_INVITE}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`mt-7 ${plan.featured ? "btn-primary" : "btn-ghost"} w-full`}
               >
                 Open a ticket

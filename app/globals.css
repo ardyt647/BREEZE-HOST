@@ -10,22 +10,43 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: #eaf8fc;
 }
 
 body {
   color: #1e343a;
-  background-color: #eaf8fc;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Decorative background.
+ *
+ * This is a fixed-position pseudo element rather than `background-attachment: fixed`
+ * on the body. A fixed attachment forces the browser to repaint the whole background
+ * on every scroll frame, which makes scrolling stutter. A fixed element is painted
+ * once onto its own layer and then only composited, so scrolling stays smooth.
+ */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
     radial-gradient(60rem 40rem at 15% -10%, #d3eff8 0%, rgba(211, 239, 248, 0) 60%),
     radial-gradient(50rem 40rem at 100% 0%, #bfebee 0%, rgba(191, 235, 238, 0) 55%),
     radial-gradient(60rem 50rem at 50% 120%, #d3eff8 0%, rgba(211, 239, 248, 0) 60%);
-  background-attachment: fixed;
-  -webkit-font-smoothing: antialiased;
 }
 
 @layer components {
+  /*
+   * Cards use a near-opaque background instead of `backdrop-filter: blur()`.
+   * Backdrop blur is recomputed for every visible blurred surface on every scroll
+   * frame, and with several large cards on screen it is the other big source of jank.
+   * The look is almost identical on this light background.
+   */
   .glass-card {
-    @apply rounded-2xl border border-white/70 bg-white/70 shadow-glass backdrop-blur-md;
+    @apply rounded-2xl border border-white/70 bg-white/85 shadow-glass;
   }
 
   .section-shell {
